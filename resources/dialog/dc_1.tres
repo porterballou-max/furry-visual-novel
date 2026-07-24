@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://bluva6j7wln5y"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_5olao"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_50fbj"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="2_q7n7w"]
+[ext_resource type="Resource" uid="uid://200wthq7ecre" path="res://resources/dialog/dc_2.tres" id="2_t6ave"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="4_t6ave"]
+
+[sub_resource type="Resource" id="Resource_vm1su"]
+script = ExtResource("1_5olao")
+chunk = ExtResource("2_t6ave")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_b5irm"]
+script = ExtResource("2_50fbj")
+text = "... hum.
+Small. Sparse."
+speaker = &"???"
+heart_jolt = 15
+heart_slide_value = 2
+type_sound = ExtResource("4_t6ave")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_i2t4f"]
+script = ExtResource("2_50fbj")
+text = "Clean, thankfully. I was worried that smell was coming from in here."
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_8cye3"]
+script = ExtResource("2_50fbj")
+text = "Greetings."
+character_animation_name = &"back_eye_contact"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_km5ld"]
+script = ExtResource("2_50fbj")
+text = "You are my roommate, are you not?"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("2_q7n7w")
+fragments = Array[ExtResource("2_50fbj")]([SubResource("Resource_b5irm"), SubResource("Resource_i2t4f"), SubResource("Resource_8cye3"), SubResource("Resource_km5ld")])
+branches = Array[ExtResource("1_5olao")]([SubResource("Resource_vm1su")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

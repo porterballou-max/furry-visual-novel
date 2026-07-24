@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cmxses2tl7kov"]
+
+[ext_resource type="Shader" uid="uid://yos7t7pubatr" path="res://blur.gdshader" id="1_fc23q"]
+
+[resource]
+shader = ExtResource("1_fc23q")
+shader_parameter/strength = 1.0000000475
+shader_parameter/sample_power = 3
+shader_parameter/is_canvas_group = false

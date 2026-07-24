@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://6wtkxpr0qnam"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_u6dum"]
+[ext_resource type="Resource" uid="uid://bwtf68ejrdsbv" path="res://resources/dialog/dc_4.tres" id="2_5jmmh"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_5resl"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_5jmmh"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="3_5resl"]
+
+[sub_resource type="Resource" id="Resource_8kwme"]
+script = ExtResource("1_u6dum")
+chunk = ExtResource("2_5jmmh")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_pn0lb"]
+script = ExtResource("2_5resl")
+text = "What a nice name. I used to have a friend named Sky, but, well..."
+speaker = &"Rex"
+type_sound = ExtResource("3_5resl")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_8kb5b"]
+script = ExtResource("2_5resl")
+text = "Ah, well, it doesn't matter. A pleasure to meet you, Sky."
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_5jmmh")
+fragments = Array[ExtResource("2_5resl")]([SubResource("Resource_pn0lb"), SubResource("Resource_8kb5b")])
+branches = Array[ExtResource("1_u6dum")]([SubResource("Resource_8kwme")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

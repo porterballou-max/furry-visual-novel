@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://200wthq7ecre"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_7u4qu"]
+[ext_resource type="Resource" uid="uid://doxafcbujc2ls" path="res://resources/dialog/dc_3.tres" id="2_8u8r2"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_p2ak4"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_8u8r2"]
+[ext_resource type="AudioStream" uid="uid://jkgqwdx8i3ts" path="res://sounds/snd_type.wav" id="3_p2ak4"]
+
+[sub_resource type="Resource" id="Resource_q5cit"]
+script = ExtResource("1_7u4qu")
+chunk = ExtResource("2_8u8r2")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_r6tqh"]
+script = ExtResource("2_p2ak4")
+text = "This can't be happening."
+speaker = &"Sky"
+type_sound = ExtResource("3_p2ak4")
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_i53gu"]
+script = ExtResource("2_p2ak4")
+text = "My heart... I... d-deep breaths...
+
+(Press and hold G until the bar is full, then release.)"
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_h6smj"]
+script = ExtResource("2_p2ak4")
+text = "I'm so nervous, I can't... I can hardly stop to breathe..! J-just.. focus... just focus on what happens next..."
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_8u8r2")
+fragments = Array[ExtResource("2_p2ak4")]([SubResource("Resource_r6tqh"), SubResource("Resource_i53gu"), SubResource("Resource_h6smj")])
+branches = Array[ExtResource("1_7u4qu")]([SubResource("Resource_q5cit")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

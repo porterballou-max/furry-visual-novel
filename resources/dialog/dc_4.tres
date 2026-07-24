@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://bwtf68ejrdsbv"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_nn618"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_7j1b4"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="3_7j1b4"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_h2up1"]
+[ext_resource type="AudioStream" uid="uid://jkgqwdx8i3ts" path="res://sounds/snd_type.wav" id="4_h2up1"]
+
+[sub_resource type="Resource" id="Resource_pn0lb"]
+script = ExtResource("2_7j1b4")
+text = "So, what are you majoring in?"
+speaker = &"Rex"
+character_animation_name = &"front_profile"
+heart_slide_value = 3
+type_sound = ExtResource("3_7j1b4")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_qv7yq"]
+script = ExtResource("2_7j1b4")
+text = "A-architecture..?"
+speaker = &"Sky"
+type_sound = ExtResource("4_h2up1")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_1iflw"]
+script = ExtResource("2_7j1b4")
+text = "Ah, lovely. I would not be surprised if we share many classes together. I look forward to working with you on any projects you desire."
+speaker = &"Rex"
+character_animation_name = &"front_profile_eye_closed"
+type_sound = ExtResource("3_7j1b4")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_3u56j"]
+script = ExtResource("2_7j1b4")
+text = "Come inside. You ought to make yourself at home."
+character_animation_name = &"back_eye_contact"
+heart_slide_value = 4
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_h2up1")
+fragments = Array[ExtResource("2_7j1b4")]([SubResource("Resource_pn0lb"), SubResource("Resource_qv7yq"), SubResource("Resource_1iflw"), SubResource("Resource_3u56j")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

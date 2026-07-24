@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://ussl46iep8w2"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_btkl1"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_ae24g"]
+[ext_resource type="Resource" uid="uid://bwtf68ejrdsbv" path="res://resources/dialog/dc_4.tres" id="2_qv7yq"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_35igj"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="3_ae24g"]
+[ext_resource type="AudioStream" uid="uid://jkgqwdx8i3ts" path="res://sounds/snd_type.wav" id="4_35igj"]
+[ext_resource type="AudioStream" uid="uid://bpct7a65ntamc" path="res://sounds/snd_type_soft.wav" id="5_02rlc"]
+
+[sub_resource type="Resource" id="Resource_lbrov"]
+script = ExtResource("1_btkl1")
+chunk = ExtResource("2_qv7yq")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_n5bi5"]
+script = ExtResource("2_ae24g")
+text = "Ah, understood. Where are you headed?"
+speaker = &"Rex"
+type_sound = ExtResource("3_ae24g")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_srhcm"]
+script = ExtResource("2_ae24g")
+text = "T-the Historical Dormatorium."
+speaker = &"Sky"
+character_animation_name = &"front_profile_eye_closed"
+type_sound = ExtResource("4_35igj")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_hqvub"]
+script = ExtResource("2_ae24g")
+text = "That is this building."
+speaker = &"Rex"
+character_animation_name = &"front_profile"
+type_sound = ExtResource("3_ae24g")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_h6smj"]
+script = ExtResource("2_ae24g")
+text = "... ah."
+speaker = &"Sky"
+heart_slide_value = 6
+type_sound = ExtResource("5_02rlc")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_h2up1"]
+script = ExtResource("2_ae24g")
+text = "Perhaps you were looking for another floor?"
+speaker = &"Rex"
+heart_slide_value = 2
+type_sound = ExtResource("3_ae24g")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_8kwme"]
+script = ExtResource("2_ae24g")
+text = "No, no, I... this... this is the right room. I was just... kind of... frazzled."
+speaker = &"Sky"
+heart_slide_value = 3
+type_sound = ExtResource("4_35igj")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_l7rgd"]
+script = ExtResource("2_ae24g")
+text = "I see."
+speaker = &"Rex"
+character_animation_name = &"front_profile_lookaway"
+heart_slide_value = 2
+type_sound = ExtResource("3_ae24g")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_35igj")
+fragments = Array[ExtResource("2_ae24g")]([SubResource("Resource_n5bi5"), SubResource("Resource_srhcm"), SubResource("Resource_hqvub"), SubResource("Resource_h6smj"), SubResource("Resource_h2up1"), SubResource("Resource_8kwme"), SubResource("Resource_l7rgd")])
+branches = Array[ExtResource("1_btkl1")]([SubResource("Resource_lbrov")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

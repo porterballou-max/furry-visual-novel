@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://bgtnklhygu23c"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_msobv"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_hqvub"]
+[ext_resource type="Resource" uid="uid://bwtf68ejrdsbv" path="res://resources/dialog/dc_4.tres" id="2_srhcm"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="3_hqvub"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_srhcm"]
+
+[sub_resource type="Resource" id="Resource_1iflw"]
+script = ExtResource("1_msobv")
+chunk = ExtResource("2_srhcm")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_dlpu8"]
+script = ExtResource("2_hqvub")
+text = "That cannot be true. This is the Historical Dormitorium, one of the oldest buildings still standing on campus."
+speaker = &"Rex"
+heart_slide_value = 4
+type_sound = ExtResource("3_hqvub")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_35igj"]
+script = ExtResource("2_hqvub")
+text = "As a student of architecture, I leaped at the chance to live within these walls. These bricks were laid by men who lived generations before us."
+character_animation_name = &"front_profile_lookaway"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_02rlc"]
+script = ExtResource("2_hqvub")
+text = "Besides, it would be highly reckless for a carnivore not to double check the building he's entering."
+character_animation_name = &"front_profile_eye_closed"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_qv7yq"]
+script = ExtResource("2_hqvub")
+text = "If I entered an herbivores-only establishment, well..."
+character_animation_name = &"front_profile_lookaway_2"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_hqvub"]
+script = ExtResource("2_hqvub")
+text = "I believe my stay here would be quite brief."
+character_animation_name = &"front_profile"
+heart_slide_value = 7
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_srhcm")
+fragments = Array[ExtResource("2_hqvub")]([SubResource("Resource_dlpu8"), SubResource("Resource_35igj"), SubResource("Resource_02rlc"), SubResource("Resource_qv7yq"), SubResource("Resource_hqvub")])
+branches = Array[ExtResource("1_msobv")]([SubResource("Resource_1iflw")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

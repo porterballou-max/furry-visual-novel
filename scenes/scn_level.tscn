@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://c654v1ytfblxs"]
+
+[ext_resource type="Script" uid="uid://c0fykju37snuj" path="res://scripts/scr_dialog_controller.gd" id="1_vonw3"]
+[ext_resource type="Theme" uid="uid://d011i360rp36b" path="res://themes/new_theme.tres" id="2_0b4ue"]
+[ext_resource type="Resource" uid="uid://dbeew5wg6or3a" path="res://resources/dialog/dc_0.tres" id="2_aicyk"]
+[ext_resource type="AudioStream" uid="uid://bpct7a65ntamc" path="res://sounds/snd_type_soft.wav" id="3_8b0r0"]
+[ext_resource type="SpriteFrames" uid="uid://cvnaqhwl8my8a" path="res://resources/rex.tres" id="3_f2txt"]
+[ext_resource type="Script" uid="uid://rdwrgtf6vdbs" path="res://scripts/scr_heart.gd" id="3_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://btw03ce8dq41o" path="res://sprites/ui/spr_next.png" id="4_0b4ue"]
+[ext_resource type="Script" uid="uid://clqrj7cyk73ev" path="res://scripts/scr_breathe.gd" id="4_8cye3"]
+[ext_resource type="SpriteFrames" uid="uid://cgfy6snl1r7sn" path="res://resources/res_hr_monitor.tres" id="6_1ainy"]
+[ext_resource type="Script" uid="uid://5laxy7krytif" path="res://scripts/death_controller.gd" id="6_4c15r"]
+[ext_resource type="Script" uid="uid://usysk8wowrgf" path="res://scripts/scr_level_complete_controller.gd" id="7_0f0m3"]
+[ext_resource type="Script" uid="uid://c4nahynarglx5" path="res://scripts/scr_heart_ui.gd" id="7_8cye3"]
+[ext_resource type="Texture2D" uid="uid://dsc8uw7c5ru6g" path="res://sprites/heart.png" id="7_n6hdu"]
+[ext_resource type="Script" uid="uid://v8pm8xc3f2t8" path="res://scripts/scr_ui_breathe.gd" id="11_2orkt"]
+[ext_resource type="Script" uid="uid://g7omxbmoi8ye" path="res://scripts/scr_fear_fx.gd" id="12_aicyk"]
+[ext_resource type="Script" uid="uid://b7c3bwrxy4be3" path="res://scripts/scr_music_control.gd" id="14_fedht"]
+[ext_resource type="AudioStream" uid="uid://duluvb5gxnc6w" path="res://music/mus_level_0.wav" id="14_h6smj"]
+[ext_resource type="AudioStream" uid="uid://rg1oglohe1hp" path="res://music/mus_level_1.wav" id="15_5pxul"]
+[ext_resource type="AudioStream" uid="uid://domgprchbletk" path="res://music/mus_level_2.wav" id="16_fedht"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dbx1b"]
+
+[sub_resource type="Curve" id="Curve_fedht"]
+_limits = [0.0, 2.0, 72.0, 162.0]
+_data = [Vector2(72, 0), 0.0, 0.024114838, 0, 0, Vector2(162, 2), 0.023207549, 0.0, 1, 0]
+point_count = 2
+
+[node name="Node2D" type="Node2D" unique_id=675933571]
+
+[node name="DialogController" type="Node" parent="." unique_id=1462619631 node_paths=PackedStringArray("body_ui_label", "speaker_label", "progress_ui", "options_container", "wolf_character", "heart", "level_complete_controller")]
+script = ExtResource("1_vonw3")
+current_chunk = ExtResource("2_aicyk")
+body_ui_label = NodePath("../CanvasLayer4/Main/SubViewport/CanvasLayer/Panel/RichTextLabel")
+speaker_label = NodePath("../CanvasLayer4/Main/SubViewport/CanvasLayer/Panel/SpeakerLabel")
+progress_ui = NodePath("../CanvasLayer4/Main/SubViewport/CanvasLayer/Panel/ProgressPrompt")
+options_container = NodePath("../CanvasLayer4/Main/SubViewport/CanvasLayer/Panel/OptionsContainer")
+wolf_character = NodePath("../CanvasLayer4/Main/SubViewport/CanvasLayer2/Character")
+heart = NodePath("../Heart")
+level_complete_controller = NodePath("../LevelCompleteController")
+current_state = 1
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="DialogController" unique_id=761105167]
+stream = ExtResource("3_8b0r0")
+bus = &"SFX"
+
+[node name="MenuPlayer" type="AudioStreamPlayer" parent="DialogController" unique_id=750355799]
+bus = &"SFX"
+
+[node name="Heart" type="Node" parent="." unique_id=1665074016 node_paths=PackedStringArray("test_container", "view")]
+script = ExtResource("3_i2t4f")
+test_container = NodePath("../CanvasLayer4/FX/SubViewport/FearFX")
+view = NodePath("../CanvasLayer4/Main/SubViewport")
+
+[node name="Breathe" type="Node" parent="." unique_id=146307839 node_paths=PackedStringArray("heart")]
+script = ExtResource("4_8cye3")
+heart = NodePath("../Heart")
+
+[node name="DeathController" type="Node" parent="." unique_id=658091553 node_paths=PackedStringArray("fade_rect")]
+script = ExtResource("6_4c15r")
+fade_rect = NodePath("../CanvasLayer4/Fade/SubViewport/ColorRect")
+
+[node name="LevelCompleteController" type="Node" parent="." unique_id=1625922551 node_paths=PackedStringArray("fade_rect")]
+script = ExtResource("7_0f0m3")
+fade_rect = NodePath("../CanvasLayer4/Fade/SubViewport/ColorRect")
+metadata/_custom_type_script = "uid://usysk8wowrgf"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1402405644]
+position = Vector2(321, 240)
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="." unique_id=150024263]
+process_mode = 3
+
+[node name="Main" type="SubViewportContainer" parent="CanvasLayer4" unique_id=39409422]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer4/Main" unique_id=1723905540]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer4/Main/SubViewport" unique_id=61153916]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer4/Main/SubViewport" unique_id=1777316887]
+
+[node name="Character" type="AnimatedSprite2D" parent="CanvasLayer4/Main/SubViewport/CanvasLayer2" unique_id=2055743310]
+visible = false
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_f2txt")
+animation = &"back_eye_contact"
+autoplay = "back_aloof"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer4/Main/SubViewport" unique_id=1501941637]
+offset = Vector2(-320, -240)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, -320, -240)
+
+[node name="Panel" type="Panel" parent="CanvasLayer4/Main/SubViewport/CanvasLayer" unique_id=1209014586]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -199.5
+offset_right = 61.5
+offset_bottom = -132.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_0b4ue")
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeakerLabel" type="RichTextLabel" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel" unique_id=1779390693]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -22.0
+offset_right = 86.5
+offset_bottom = -3.5
+text = "Character Name"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel" unique_id=855993678]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 276.0
+offset_bottom = 66.0
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ProgressPrompt" type="TextureRect" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel" unique_id=407027697]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_0b4ue")
+stretch_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel" unique_id=1081722188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer4/Main/SubViewport/CanvasLayer" unique_id=1281114175 node_paths=PackedStringArray("animated_sprite_2d", "counter_label", "heart_texture_rect")]
+offset_left = 392.0
+offset_top = 280.5
+offset_right = 456.0
+offset_bottom = 347.5
+theme = ExtResource("2_0b4ue")
+script = ExtResource("7_8cye3")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+counter_label = NodePath("BPMCounter")
+heart_texture_rect = NodePath("TextureRect")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel2" unique_id=420155131]
+position = Vector2(33, 33)
+sprite_frames = ExtResource("6_1ainy")
+autoplay = "default"
+frame_progress = 0.36214676
+
+[node name="BPMCounter" type="RichTextLabel" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel2" unique_id=1129546000]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -22.0
+offset_right = 57.0
+offset_bottom = -3.5
+text = "160"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel2" unique_id=2092825853]
+layout_mode = 0
+offset_left = 56.5
+offset_top = -19.0
+offset_right = 69.5
+offset_bottom = -6.0
+texture = ExtResource("7_n6hdu")
+stretch_mode = 3
+
+[node name="BreatheBar" type="ProgressBar" parent="CanvasLayer4/Main/SubViewport/CanvasLayer" unique_id=430604911]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 142.0
+offset_top = -203.0
+offset_right = 153.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_0b4ue")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+script = ExtResource("11_2orkt")
+metadata/_edit_use_anchors_ = true
+
+[node name="FX" type="SubViewportContainer" parent="CanvasLayer4" unique_id=1192454447]
+material = SubResource("CanvasItemMaterial_dbx1b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer4/FX" unique_id=2046622635]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="FearFX" type="Control" parent="CanvasLayer4/FX/SubViewport" unique_id=1174234428 node_paths=PackedStringArray("snapshot_viewport")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_aicyk")
+snapshot_viewport = NodePath("../../../Main/SubViewport")
+
+[node name="Fade" type="SubViewportContainer" parent="CanvasLayer4" unique_id=1244905978]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer4/Fade" unique_id=1287186362]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer4/Fade/SubViewport" unique_id=711354077]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MusicSynchronizer" type="Node" parent="." unique_id=62458374]
+process_mode = 3
+script = ExtResource("14_fedht")
+bpm_to_target_weight = SubResource("Curve_fedht")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicSynchronizer" unique_id=981190713]
+stream = ExtResource("14_h6smj")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="MusicSynchronizer" unique_id=1330216639]
+stream = ExtResource("15_5pxul")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="MusicSynchronizer" unique_id=459433584]
+stream = ExtResource("16_fedht")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="bpm_changed" from="Heart" to="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel2" method="on_bpm_changed"]
+[connection signal="bpm_changed" from="Heart" to="CanvasLayer4/FX/SubViewport/FearFX" method="_on_heart_bpm_changed"]
+[connection signal="bpm_changed" from="Heart" to="MusicSynchronizer" method="_on_heart_bpm_changed"]
+[connection signal="bpm_max_reached" from="Heart" to="DeathController" method="_on_heart_bpm_max_reached"]
+[connection signal="slide_changed" from="Heart" to="CanvasLayer4/Main/SubViewport/CanvasLayer/Panel2" method="_on_heart_slide_changed"]
+[connection signal="air_changed" from="Breathe" to="CanvasLayer4/Main/SubViewport/CanvasLayer/BreatheBar" method="_on_breathe_air_changed"]

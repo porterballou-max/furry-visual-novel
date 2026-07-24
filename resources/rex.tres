@@ -1,0 +1,102 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cvnaqhwl8my8a"]
+
+[ext_resource type="Texture2D" uid="uid://b5gn5vq1w0rty" path="res://sprites/clears.png" id="1_5cd22"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5d1m"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cd22"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgwhu"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(960, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x01pt"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(640, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjkmb"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jmdw"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(320, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s3i"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(960, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1decs"]
+atlas = ExtResource("1_5cd22")
+region = Rect2(0, 240, 320, 240)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5d1m")
+}],
+"loop": 1,
+"name": &"back_aloof",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cd22")
+}],
+"loop": 1,
+"name": &"back_eye_contact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgwhu")
+}],
+"loop": 1,
+"name": &"front_deadeye",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x01pt")
+}],
+"loop": 1,
+"name": &"front_deadeye_dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjkmb")
+}],
+"loop": 1,
+"name": &"front_profile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jmdw")
+}],
+"loop": 1,
+"name": &"front_profile_eye_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37s3i")
+}],
+"loop": 1,
+"name": &"front_profile_lookaway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1decs")
+}],
+"loop": 1,
+"name": &"front_profile_lookaway_2",
+"speed": 5.0
+}]

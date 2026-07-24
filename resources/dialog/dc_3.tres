@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://doxafcbujc2ls"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_eytr3"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="2_3b4a2"]
+[ext_resource type="Resource" uid="uid://6wtkxpr0qnam" path="res://resources/dialog/dc_3_a.tres" id="2_nfj6c"]
+[ext_resource type="AudioStream" uid="uid://bucttdp4gnam2" path="res://sounds/snd_type_hard.wav" id="3_3b4a2"]
+[ext_resource type="Resource" uid="uid://ussl46iep8w2" path="res://resources/dialog/dc_3_b.tres" id="3_ey87t"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_f45p1"]
+[ext_resource type="Resource" uid="uid://bgtnklhygu23c" path="res://resources/dialog/dc_3_c.tres" id="4_pagtr"]
+
+[sub_resource type="Resource" id="Resource_3b4a2"]
+script = ExtResource("1_eytr3")
+option_name = "Sky."
+chunk = ExtResource("2_nfj6c")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_f45p1"]
+script = ExtResource("1_eytr3")
+option_name = "I'm in the wrong building."
+chunk = ExtResource("3_ey87t")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_q5cit"]
+script = ExtResource("1_eytr3")
+option_name = "You're in the wrong building."
+chunk = ExtResource("4_pagtr")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_nfj6c"]
+script = ExtResource("2_3b4a2")
+text = "I apologize if I startled you. I do not produce a very potent scent, so my presence is often a surprise to those around me."
+speaker = &"???"
+character_animation_name = &"back_aloof"
+type_sound = ExtResource("3_3b4a2")
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_ey87t"]
+script = ExtResource("2_3b4a2")
+text = "My name is Rex."
+character_animation_name = &"back_eye_contact"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_pagtr"]
+script = ExtResource("2_3b4a2")
+text = "And you are?"
+character_animation_name = &"front_profile"
+auto = true
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_f45p1")
+fragments = Array[ExtResource("2_3b4a2")]([SubResource("Resource_nfj6c"), SubResource("Resource_ey87t"), SubResource("Resource_pagtr")])
+branches = Array[ExtResource("1_eytr3")]([SubResource("Resource_3b4a2"), SubResource("Resource_f45p1"), SubResource("Resource_q5cit")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"

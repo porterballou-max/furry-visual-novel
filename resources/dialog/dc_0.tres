@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="DialogChunk" format=3 uid="uid://dbeew5wg6or3a"]
+
+[ext_resource type="Script" uid="uid://bsqgtcru1itbd" path="res://scripts/scr_dialog_branch.gd" id="1_b5irm"]
+[ext_resource type="Script" uid="uid://c3bm6y7ffnn77" path="res://scripts/scr_dialog_fragment.gd" id="1_yyy1i"]
+[ext_resource type="Resource" uid="uid://bluva6j7wln5y" path="res://resources/dialog/dc_1.tres" id="2_yyy1i"]
+[ext_resource type="Script" uid="uid://d0lmgfpgk4vk5" path="res://scripts/scr_dialog_chunk.gd" id="3_nqhml"]
+[ext_resource type="Script" uid="uid://kb6ecpsjmg53" path="res://scripts/instruct/scr_dialog_script.gd" id="4_yyy1i"]
+[ext_resource type="Script" uid="uid://cvavadsrk3jy8" path="res://scripts/instruct/scr_dialog_script_00.gd" id="5_nqhml"]
+[ext_resource type="AudioStream" uid="uid://jkgqwdx8i3ts" path="res://sounds/snd_type.wav" id="5_qshk4"]
+
+[sub_resource type="Resource" id="Resource_3m5h0"]
+script = ExtResource("1_b5irm")
+chunk = ExtResource("2_yyy1i")
+metadata/_custom_type_script = "uid://bsqgtcru1itbd"
+
+[sub_resource type="Resource" id="Resource_n6hdu"]
+script = ExtResource("4_yyy1i")
+metadata/_custom_type_script = "uid://kb6ecpsjmg53"
+
+[sub_resource type="Resource" id="Resource_nqhml"]
+script = ExtResource("1_yyy1i")
+text = "My name is Sky and I am a rabbit beginning to attend university."
+speaker = &"Sky"
+script_on_complete = SubResource("Resource_n6hdu")
+type_sound = ExtResource("5_qshk4")
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_km5ld"]
+script = ExtResource("1_yyy1i")
+text = "I am very scared of carnivores--wolves, bears, snakes, etcetera.."
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_i2t4f"]
+script = ExtResource("1_yyy1i")
+text = "Mercifully, I was able to find a prey-only dormitorium... well, barely."
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_aicyk"]
+script = ExtResource("1_yyy1i")
+text = "The last public documentation I could find was from some decades ago."
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[sub_resource type="Resource" id="Resource_q7n7w"]
+script = ExtResource("1_yyy1i")
+text = "Nevertheless, I'm glad to have found a place where my heart won't start racing. Now before the door of my room, I twist the knob..."
+script_on_complete = ExtResource("5_nqhml")
+metadata/_custom_type_script = "uid://c3bm6y7ffnn77"
+
+[resource]
+script = ExtResource("3_nqhml")
+fragments = Array[ExtResource("1_yyy1i")]([SubResource("Resource_nqhml"), SubResource("Resource_km5ld"), SubResource("Resource_i2t4f"), SubResource("Resource_aicyk"), SubResource("Resource_q7n7w")])
+branches = Array[ExtResource("1_b5irm")]([SubResource("Resource_3m5h0")])
+metadata/_custom_type_script = "uid://d0lmgfpgk4vk5"
